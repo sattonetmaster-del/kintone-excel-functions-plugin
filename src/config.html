@@ -1,0 +1,36 @@
+<div id="excel-func-config" style="max-width: 900px; padding: 8px;">
+  <h2 style="font-size: 16px; margin: 0 0 8px;">Excel関数プラグイン 設定</h2>
+  <p style="margin: 0 0 12px; line-height: 1.7;">
+    計算ルールを登録します。レコードの保存時に式を計算し、結果を「結果を入れるフィールド」へ書き込みます。<br>
+    式の書き方：フィールドは <code>[フィールドコード]</code>、サブテーブルの列は <code>[テーブルコード.列コード]</code> と書きます。<br>
+    例）<code>AVERAGE([明細.単価])</code>、<code>IF([金額] &gt;= 10000, [金額] * 0.1, 0)</code><br>
+    使える関数：SUM / AVERAGE / MAX / MIN / COUNT / STDEV / STDEVP / ROUND / IF
+  </p>
+
+  <table id="rules-table" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding: 4px; border-bottom: 1px solid #ccc; width: 30%;">結果を入れるフィールドコード（数値フィールド）</th>
+        <th style="text-align: left; padding: 4px; border-bottom: 1px solid #ccc;">式</th>
+        <th style="padding: 4px; border-bottom: 1px solid #ccc; width: 64px;">削除</th>
+      </tr>
+    </thead>
+    <tbody id="rules-body"></tbody>
+  </table>
+
+  <p style="margin: 12px 0;">
+    <button id="add-rule" type="button">＋ ルールを追加</button>
+  </p>
+
+  <p id="config-error" style="color: #d40000; white-space: pre-line; margin: 8px 0;"></p>
+
+  <p style="margin: 16px 0;">
+    <button id="save-config" type="button" style="font-weight: bold;">保存</button>
+    <button id="cancel-config" type="button">キャンセル</button>
+  </p>
+
+  <p style="color: #666; line-height: 1.7;">
+    ※ 保存後はアプリ設定画面で「アプリを更新」してください。<br>
+    ※ 式にエラーがある場合は保存できません。エラーの理由が上に表示されます。
+  </p>
+</div>
